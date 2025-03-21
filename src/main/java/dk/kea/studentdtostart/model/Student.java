@@ -10,6 +10,11 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
+@Getter
+@Setter
+//@NoArgsConstructor //tomme constructor
+//@AllArgsConstructor //constructor med parametre
+@Builder //hvis man har et objekt man skal initialisere og med forskellige parametre, så anvender man builder
 public class Student {
 
     @Id
@@ -39,47 +44,8 @@ public class Student {
         this.bornTime = bornTime;
     }
 
+
+    //Tom constructor: skal anvendes af Spring JPA når der oprettes objekter
     public Student() {
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public LocalDate getBornDate() {
-        return bornDate;
-    }
-
-    public void setBornDate(LocalDate bornDate) {
-        this.bornDate = bornDate;
-    }
-
-    public LocalTime getBornTime() {
-        return bornTime;
-    }
-
-    public void setBornTime(LocalTime bornTime) {
-        this.bornTime = bornTime;
-    }
 }
-
